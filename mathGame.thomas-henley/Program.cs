@@ -21,12 +21,12 @@ while (true)
     if (userInput is not null && userInput.ToLower() == "q")
     {
         Console.WriteLine("Thank you for playing!");
-        showHistory();
+        ShowHistory();
         break;
     }
 
     // Play game based on user input.
-    handleUserChoice(userInput);
+    HandleUserChoice(userInput);
 };
 
 void displayOptions()
@@ -41,14 +41,14 @@ void displayOptions()
     Console.WriteLine();
 }
 
-void handleUserChoice(string? userInput)
+void HandleUserChoice(string? userInput)
 {
     bool validChoice = int.TryParse(userInput, out int userChoice) && userChoice is > 0 and <= 5;
 
     if (validChoice)
     {
         Console.WriteLine($"You chose {userChoice}.\n");
-        optionSelect(userChoice);
+        OptionSelect(userChoice);
     }
     else
     {
@@ -57,29 +57,29 @@ void handleUserChoice(string? userInput)
     Console.WriteLine();
 }
 
-void optionSelect(int userChoice)
+void OptionSelect(int userChoice)
 {
     switch (userChoice)
     {
         case 1:
-            playProblem(new AdditionProblem());
+            PlayProblem(new AdditionProblem());
             break;
         case 2: 
-            playProblem(new SubtractionProblem());
+            PlayProblem(new SubtractionProblem());
             break;
         case 3:
-            playProblem(new MultiplicationProblem());
+            PlayProblem(new MultiplicationProblem());
             break;
         case 4:
-            playProblem(new DivisionProblem());
+            PlayProblem(new DivisionProblem());
             break;
         case 5:
-            showHistory();
+            ShowHistory();
             break;
     }
 }
 
-void playProblem(MathProblem problem)
+void PlayProblem(MathProblem problem)
 {
     Console.Write(problem.ToStringPrompt());
 
@@ -116,7 +116,7 @@ void playProblem(MathProblem problem)
     }
 }
 
-void showHistory()
+void ShowHistory()
 {
     Console.WriteLine();
     Console.WriteLine("<<< RESULTS >>>");
