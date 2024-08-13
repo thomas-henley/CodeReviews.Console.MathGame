@@ -12,7 +12,7 @@ Console.WriteLine("+---------------------------+");
 // Main menu loop.
 while (true)
 {
-    displayOptions();
+    DisplayOptions();
 
     Console.Write("Your choice: ");
     string? userInput = Console.ReadLine();
@@ -27,9 +27,9 @@ while (true)
 
     // Play game based on user input.
     HandleUserChoice(userInput);
-};
+}
 
-void displayOptions()
+void DisplayOptions()
 {
     Console.WriteLine();
     Console.WriteLine("Please enter a number from the options below, or Q to exit.\n");
